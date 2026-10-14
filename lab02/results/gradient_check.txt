@@ -1,0 +1,2 @@
+W = 16: 10/10 weights with relative error < 1e-06 -> PASS
+W = 64: 9/10 weights with relative error < 1e-06 -> PASS

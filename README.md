@@ -1,11 +1,6 @@
 # ML Systems — Laboratory Repository
 
-Individual lab work for the **Machine Learning Systems** course
-(Akademia Finansów i Biznesu Vistula, Faculty of Computer Science, Graphics and Architecture).
-
-- **Instructor:** mgr. inż. Kumar Nalinaksh
-- **Student:** Khoroshun Vladyslav ([@XV-0-0-0](https://github.com/XV-0-0-0))
-- **Textbook:** Vijay Janapa Reddi, *Introduction to Machine Learning Systems: Principles and Practices of Engineering Artificially Intelligent Systems* ([mlsysbook.ai](https://mlsysbook.ai))
+Lab work for the **Machine Learning Systems** course.
 
 ## Repository layout
 

@@ -1,0 +1,152 @@
+{
+  "hand_flops": {
+    "one_layer": {
+      "Linear 784->256": 401408,
+      "Conv2d(16,32,3) @14x14": 1806336,
+      "Transformer encoder layer (seq=16,d=64,ff=128)": {
+        "QKV projections": 393216,
+        "scores QK^T": 32768,
+        "weights x V": 32768,
+        "output projection": 131072,
+        "feed-forward": 524288,
+        "total": 1114112
+      }
+    },
+    "model": {
+      "MLP": 469504,
+      "CNN": 2063488,
+      "Attention": 2329856
+    }
+  },
+  "models": {
+    "MLP": {
+      "params": 235146,
+      "torchinfo_params": 235146,
+      "hand_flops": 469504,
+      "thop_macs": 234752,
+      "flop_counter": 469504,
+      "activation_elems": 1562,
+      "latency_b1_ms": 0.07206050003105702,
+      "latency_b128_ms": 0.6751430000235814,
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 0.4887304896224629,
+          "val_acc": 0.8328,
+          "seconds": 10.470335141999954
+        },
+        {
+          "epoch": 2,
+          "train_loss": 0.3532630873420022,
+          "val_acc": 0.865,
+          "seconds": 10.62816671500002
+        },
+        {
+          "epoch": 3,
+          "train_loss": 0.31408869437954645,
+          "val_acc": 0.8646,
+          "seconds": 11.693369238999992
+        },
+        {
+          "epoch": 4,
+          "train_loss": 0.286449825241349,
+          "val_acc": 0.877,
+          "seconds": 9.976150242000017
+        },
+        {
+          "epoch": 5,
+          "train_loss": 0.2706160388513045,
+          "val_acc": 0.8806,
+          "seconds": 10.190793159999998
+        }
+      ],
+      "test_acc": 0.8819
+    },
+    "CNN": {
+      "params": 20490,
+      "torchinfo_params": 20490,
+      "hand_flops": 2063488,
+      "thop_macs": 1031744,
+      "flop_counter": 2063488,
+      "activation_elems": 43914,
+      "latency_b1_ms": 0.21055950003301405,
+      "latency_b128_ms": 20.143703000030655,
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 0.5323397315979004,
+          "val_acc": 0.8596,
+          "seconds": 22.199342883999975
+        },
+        {
+          "epoch": 2,
+          "train_loss": 0.3511961069800637,
+          "val_acc": 0.8716,
+          "seconds": 22.30644676099996
+        },
+        {
+          "epoch": 3,
+          "train_loss": 0.30995749747969886,
+          "val_acc": 0.8834,
+          "seconds": 20.705113978999975
+        },
+        {
+          "epoch": 4,
+          "train_loss": 0.28015220462192186,
+          "val_acc": 0.8946,
+          "seconds": 20.526405802
+        },
+        {
+          "epoch": 5,
+          "train_loss": 0.2631641380765221,
+          "val_acc": 0.8958,
+          "seconds": 21.26784210900007
+        }
+      ],
+      "test_acc": 0.8934
+    },
+    "Attention": {
+      "params": 71818,
+      "torchinfo_params": 71818,
+      "hand_flops": 2329856,
+      "thop_macs": 591488,
+      "flop_counter": 2198784,
+      "activation_elems": 19466,
+      "latency_b1_ms": 0.9296499999891239,
+      "latency_b128_ms": 5.398270999990018,
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 0.7763674180811102,
+          "val_acc": 0.8198,
+          "seconds": 28.41042234500003
+        },
+        {
+          "epoch": 2,
+          "train_loss": 0.46965691007267346,
+          "val_acc": 0.8366,
+          "seconds": 27.359277487999975
+        },
+        {
+          "epoch": 3,
+          "train_loss": 0.41367367958589035,
+          "val_acc": 0.8452,
+          "seconds": 31.425927376999994
+        },
+        {
+          "epoch": 4,
+          "train_loss": 0.381414311096885,
+          "val_acc": 0.8588,
+          "seconds": 30.657172438999964
+        },
+        {
+          "epoch": 5,
+          "train_loss": 0.36078339226462625,
+          "val_acc": 0.858,
+          "seconds": 28.960808459999953
+        }
+      ],
+      "test_acc": 0.8559
+    }
+  }
+}

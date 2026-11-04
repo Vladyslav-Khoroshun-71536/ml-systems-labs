@@ -1,0 +1,277 @@
+config:
+  seed: 42
+  data:
+    openml_name: adult
+    openml_version: 2
+    data_home: data/openml_cache
+    raw_snapshot: data/raw/adult_raw.csv
+    expected_rows: 48842
+    expected_cols: 15
+    target: income
+    target_aliases:
+    - class
+    - income
+    positive_label: '>50K'
+  schema:
+    types:
+      age: int
+      workclass: category
+      fnlwgt: int
+      education: category
+      education-num: int
+      marital-status: category
+      occupation: category
+      relationship: category
+      race: category
+      sex: category
+      capital-gain: int
+      capital-loss: int
+      hours-per-week: int
+      native-country: category
+      income: category
+    ranges:
+      age:
+      - 17
+      - 90
+      hours-per-week:
+      - 1
+      - 99
+      capital-gain:
+      - 0
+      - 99999
+      capital-loss:
+      - 0
+      - 4356
+    missing_token: '?'
+    categories:
+      workclass:
+      - Private
+      - Self-emp-not-inc
+      - Self-emp-inc
+      - Federal-gov
+      - Local-gov
+      - State-gov
+      - Without-pay
+      - Never-worked
+      education:
+      - Bachelors
+      - Some-college
+      - 11th
+      - HS-grad
+      - Prof-school
+      - Assoc-acdm
+      - Assoc-voc
+      - 9th
+      - 7th-8th
+      - 12th
+      - Masters
+      - 1st-4th
+      - 10th
+      - Doctorate
+      - 5th-6th
+      - Preschool
+      marital-status:
+      - Married-civ-spouse
+      - Divorced
+      - Never-married
+      - Separated
+      - Widowed
+      - Married-spouse-absent
+      - Married-AF-spouse
+      occupation:
+      - Tech-support
+      - Craft-repair
+      - Other-service
+      - Sales
+      - Exec-managerial
+      - Prof-specialty
+      - Handlers-cleaners
+      - Machine-op-inspct
+      - Adm-clerical
+      - Farming-fishing
+      - Transport-moving
+      - Priv-house-serv
+      - Protective-serv
+      - Armed-Forces
+      relationship:
+      - Wife
+      - Own-child
+      - Husband
+      - Not-in-family
+      - Other-relative
+      - Unmarried
+      race:
+      - White
+      - Asian-Pac-Islander
+      - Amer-Indian-Eskimo
+      - Other
+      - Black
+      sex:
+      - Female
+      - Male
+      native-country:
+      - United-States
+      - Cambodia
+      - England
+      - Puerto-Rico
+      - Canada
+      - Germany
+      - Outlying-US(Guam-USVI-etc)
+      - India
+      - Japan
+      - Greece
+      - South
+      - China
+      - Cuba
+      - Iran
+      - Honduras
+      - Philippines
+      - Italy
+      - Poland
+      - Jamaica
+      - Vietnam
+      - Mexico
+      - Portugal
+      - Ireland
+      - France
+      - Dominican-Republic
+      - Laos
+      - Ecuador
+      - Taiwan
+      - Haiti
+      - Columbia
+      - Hungary
+      - Guatemala
+      - Nicaragua
+      - Scotland
+      - Thailand
+      - Yugoslavia
+      - El-Salvador
+      - Trinadad&Tobago
+      - Peru
+      - Hong
+      - Holand-Netherlands
+      income:
+      - <=50K
+      - '>50K'
+    education_num:
+      Preschool: 1
+      1st-4th: 2
+      5th-6th: 3
+      7th-8th: 4
+      9th: 5
+      10th: 6
+      11th: 7
+      12th: 8
+      HS-grad: 9
+      Some-college: 10
+      Assoc-voc: 11
+      Assoc-acdm: 12
+      Bachelors: 13
+      Masters: 14
+      Prof-school: 15
+      Doctorate: 16
+  split:
+    test_size: 0.3
+    stratify: true
+  cleaning:
+    numeric_impute: median
+    categorical_impute: most_frequent
+    clip_quantiles:
+    - 0.01
+    - 0.99
+    drop_duplicates_in_train: true
+  features:
+    derived:
+    - capital_net
+    - hours_per_age
+  model:
+    logistic_regression:
+      max_iter: 2000
+      C: 1.0
+  label_quality:
+    sample_size: 50
+  output:
+    results_dir: results
+    processed_dir: data/processed
+processed_data_sha256:
+  train.csv: d3dfb426ddcb44fb49f783cdfb6d8e752cc04bf3c9e5d699480b58c5eeb6cb6c
+  test.csv: b966ca48c6e84ed82f64917023ba9b4a080ade39b8e15e5227dd9bf50e231ece
+  combined: d1e6c461e130ab957123391768dfe6429ac7f542698fdd1ee1dc655ad40c9430
+ingestion:
+  source: OpenML 'adult' v2 (id 1590)
+  rows: 48842
+  cols: 15
+  snapshot_sha256: b599a0a3cd1051f5a0e71d9334408e4190e820ba7911327452edbea3a2fee0b5
+validation:
+  fail_checks: []
+  rows_with_any_missing: 3620
+  exact_duplicates: 52
+  label_distribution:
+    <=50K: 37155
+    '>50K': 11687
+cleaning:
+  train_rows: 34165
+  test_rows: 14653
+  train_duplicates_dropped: 24
+  imputer_modes:
+    workclass: Private
+    education: HS-grad
+    marital-status: Married-civ-spouse
+    occupation: Prof-specialty
+    relationship: Husband
+    race: White
+    sex: Male
+    native-country: United-States
+  numeric_stats:
+  - feature: age
+    train median (imputer): 37.0
+    clip low (p1): 17.0
+    clip high (p99): 74.0
+  - feature: fnlwgt
+    train median (imputer): 178272.0
+    clip low (p1): 27035.2
+    clip high (p99): 509629.0
+  - feature: education-num
+    train median (imputer): 10.0
+    clip low (p1): 3.0
+    clip high (p99): 16.0
+  - feature: capital-gain
+    train median (imputer): 0.0
+    clip low (p1): 0.0
+    clip high (p99): 15024.0
+  - feature: capital-loss
+    train median (imputer): 0.0
+    clip low (p1): 0.0
+    clip high (p99): 1980.0
+  - feature: hours-per-week
+    train median (imputer): 40.0
+    clip low (p1): 8.0
+    clip high (p99): 80.0
+feature_evaluation:
+- model: baseline (14 features)
+  accuracy: 0.854
+  F1 (>50K): 0.6601
+- model: + capital_net, hours_per_age
+  accuracy: 0.8578
+  F1 (>50K): 0.6696
+label_quality:
+  duplicate_groups: 54
+  conflicting_groups: 5
+  rows_in_conflict: 10
+  sample_flagged: 0
+  rule_counts_full:
+    Husband but Female: 1
+    Wife but Male: 3
+    Husband/Wife but not married: 0
+    gain and loss both > 0: 0
+    age < 20 with Masters/Doctorate/Prof-school: 1
+    Never-worked but has occupation: 0
+    age outside 17-90: 0
+    hours outside 1-99: 0
+    capital-gain = 99999 (top-code): 244
+environment:
+  python: 3.13.3
+  pandas: 2.3.3
+  numpy: 2.3.3
+  scikit-learn: 1.7.2

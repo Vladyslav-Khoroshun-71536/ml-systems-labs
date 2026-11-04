@@ -1,0 +1,357 @@
+{
+  "n_rows": 48842,
+  "checks": [
+    {
+      "check": "columns present",
+      "column": "all",
+      "violations": 0,
+      "status": "PASS",
+      "detail": "missing=[] extra=[]"
+    },
+    {
+      "check": "type int",
+      "column": "age",
+      "violations": 0,
+      "status": "PASS",
+      "detail": "stored dtype=int64"
+    },
+    {
+      "check": "type category",
+      "column": "workclass",
+      "violations": 0,
+      "status": "PASS",
+      "detail": "8 distinct values"
+    },
+    {
+      "check": "type int",
+      "column": "fnlwgt",
+      "violations": 0,
+      "status": "PASS",
+      "detail": "stored dtype=int64"
+    },
+    {
+      "check": "type category",
+      "column": "education",
+      "violations": 0,
+      "status": "PASS",
+      "detail": "16 distinct values"
+    },
+    {
+      "check": "type int",
+      "column": "education-num",
+      "violations": 0,
+      "status": "PASS",
+      "detail": "stored dtype=int64"
+    },
+    {
+      "check": "type category",
+      "column": "marital-status",
+      "violations": 0,
+      "status": "PASS",
+      "detail": "7 distinct values"
+    },
+    {
+      "check": "type category",
+      "column": "occupation",
+      "violations": 0,
+      "status": "PASS",
+      "detail": "14 distinct values"
+    },
+    {
+      "check": "type category",
+      "column": "relationship",
+      "violations": 0,
+      "status": "PASS",
+      "detail": "6 distinct values"
+    },
+    {
+      "check": "type category",
+      "column": "race",
+      "violations": 0,
+      "status": "PASS",
+      "detail": "5 distinct values"
+    },
+    {
+      "check": "type category",
+      "column": "sex",
+      "violations": 0,
+      "status": "PASS",
+      "detail": "2 distinct values"
+    },
+    {
+      "check": "type int",
+      "column": "capital-gain",
+      "violations": 0,
+      "status": "PASS",
+      "detail": "stored dtype=int64"
+    },
+    {
+      "check": "type int",
+      "column": "capital-loss",
+      "violations": 0,
+      "status": "PASS",
+      "detail": "stored dtype=int64"
+    },
+    {
+      "check": "type int",
+      "column": "hours-per-week",
+      "violations": 0,
+      "status": "PASS",
+      "detail": "stored dtype=int64"
+    },
+    {
+      "check": "type category",
+      "column": "native-country",
+      "violations": 0,
+      "status": "PASS",
+      "detail": "41 distinct values"
+    },
+    {
+      "check": "type category",
+      "column": "income",
+      "violations": 0,
+      "status": "PASS",
+      "detail": "2 distinct values"
+    },
+    {
+      "check": "range",
+      "column": "age",
+      "violations": 0,
+      "status": "PASS",
+      "detail": "allowed [17, 90], observed [17, 90]"
+    },
+    {
+      "check": "range",
+      "column": "hours-per-week",
+      "violations": 0,
+      "status": "PASS",
+      "detail": "allowed [1, 99], observed [1, 99]"
+    },
+    {
+      "check": "range",
+      "column": "capital-gain",
+      "violations": 0,
+      "status": "PASS",
+      "detail": "allowed [0, 99999], observed [0, 99999]"
+    },
+    {
+      "check": "range",
+      "column": "capital-loss",
+      "violations": 0,
+      "status": "PASS",
+      "detail": "allowed [0, 4356], observed [0, 4356]"
+    },
+    {
+      "check": "missing ('?')",
+      "column": "age",
+      "violations": 0,
+      "status": "INFO",
+      "detail": "0.00% of rows"
+    },
+    {
+      "check": "missing ('?')",
+      "column": "workclass",
+      "violations": 2799,
+      "status": "INFO",
+      "detail": "5.73% of rows"
+    },
+    {
+      "check": "missing ('?')",
+      "column": "fnlwgt",
+      "violations": 0,
+      "status": "INFO",
+      "detail": "0.00% of rows"
+    },
+    {
+      "check": "missing ('?')",
+      "column": "education",
+      "violations": 0,
+      "status": "INFO",
+      "detail": "0.00% of rows"
+    },
+    {
+      "check": "missing ('?')",
+      "column": "education-num",
+      "violations": 0,
+      "status": "INFO",
+      "detail": "0.00% of rows"
+    },
+    {
+      "check": "missing ('?')",
+      "column": "marital-status",
+      "violations": 0,
+      "status": "INFO",
+      "detail": "0.00% of rows"
+    },
+    {
+      "check": "missing ('?')",
+      "column": "occupation",
+      "violations": 2809,
+      "status": "INFO",
+      "detail": "5.75% of rows"
+    },
+    {
+      "check": "missing ('?')",
+      "column": "relationship",
+      "violations": 0,
+      "status": "INFO",
+      "detail": "0.00% of rows"
+    },
+    {
+      "check": "missing ('?')",
+      "column": "race",
+      "violations": 0,
+      "status": "INFO",
+      "detail": "0.00% of rows"
+    },
+    {
+      "check": "missing ('?')",
+      "column": "sex",
+      "violations": 0,
+      "status": "INFO",
+      "detail": "0.00% of rows"
+    },
+    {
+      "check": "missing ('?')",
+      "column": "capital-gain",
+      "violations": 0,
+      "status": "INFO",
+      "detail": "0.00% of rows"
+    },
+    {
+      "check": "missing ('?')",
+      "column": "capital-loss",
+      "violations": 0,
+      "status": "INFO",
+      "detail": "0.00% of rows"
+    },
+    {
+      "check": "missing ('?')",
+      "column": "hours-per-week",
+      "violations": 0,
+      "status": "INFO",
+      "detail": "0.00% of rows"
+    },
+    {
+      "check": "missing ('?')",
+      "column": "native-country",
+      "violations": 857,
+      "status": "INFO",
+      "detail": "1.75% of rows"
+    },
+    {
+      "check": "missing ('?')",
+      "column": "income",
+      "violations": 0,
+      "status": "INFO",
+      "detail": "0.00% of rows"
+    },
+    {
+      "check": "allowed categories",
+      "column": "workclass",
+      "violations": 0,
+      "status": "PASS",
+      "detail": "unknown=[]"
+    },
+    {
+      "check": "allowed categories",
+      "column": "education",
+      "violations": 0,
+      "status": "PASS",
+      "detail": "unknown=[]"
+    },
+    {
+      "check": "allowed categories",
+      "column": "marital-status",
+      "violations": 0,
+      "status": "PASS",
+      "detail": "unknown=[]"
+    },
+    {
+      "check": "allowed categories",
+      "column": "occupation",
+      "violations": 0,
+      "status": "PASS",
+      "detail": "unknown=[]"
+    },
+    {
+      "check": "allowed categories",
+      "column": "relationship",
+      "violations": 0,
+      "status": "PASS",
+      "detail": "unknown=[]"
+    },
+    {
+      "check": "allowed categories",
+      "column": "race",
+      "violations": 0,
+      "status": "PASS",
+      "detail": "unknown=[]"
+    },
+    {
+      "check": "allowed categories",
+      "column": "sex",
+      "violations": 0,
+      "status": "PASS",
+      "detail": "unknown=[]"
+    },
+    {
+      "check": "allowed categories",
+      "column": "native-country",
+      "violations": 0,
+      "status": "PASS",
+      "detail": "unknown=[]"
+    },
+    {
+      "check": "allowed categories",
+      "column": "income",
+      "violations": 0,
+      "status": "PASS",
+      "detail": "unknown=[]"
+    },
+    {
+      "check": "education vs education-num",
+      "column": "education",
+      "violations": 0,
+      "status": "PASS",
+      "detail": "must match data dictionary"
+    },
+    {
+      "check": "exact duplicate rows",
+      "column": "all",
+      "violations": 52,
+      "status": "INFO",
+      "detail": "removed later from TRAIN only"
+    },
+    {
+      "check": "duplicate feature rows",
+      "column": "14 features",
+      "violations": 57,
+      "status": "INFO",
+      "detail": "see label_quality.md"
+    }
+  ],
+  "missing": {
+    "age": 0,
+    "workclass": 2799,
+    "fnlwgt": 0,
+    "education": 0,
+    "education-num": 0,
+    "marital-status": 0,
+    "occupation": 2809,
+    "relationship": 0,
+    "race": 0,
+    "sex": 0,
+    "capital-gain": 0,
+    "capital-loss": 0,
+    "hours-per-week": 0,
+    "native-country": 857,
+    "income": 0
+  },
+  "rows_with_any_missing": 3620,
+  "duplicates_exact": 52,
+  "label_distribution": {
+    "<=50K": 37155,
+    ">50K": 11687
+  }
+}

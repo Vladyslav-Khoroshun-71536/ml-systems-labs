@@ -1,0 +1,143 @@
+{
+  "task4": {
+    "max_abs_diff_torch": 0.0,
+    "max_abs_diff_numerical": 1.0455929455588375e-09,
+    "forward_diff": 1.7763568394002505e-15,
+    "pass": true,
+    "accumulation_pass": true
+  },
+  "task5": {
+    "engine_median_s": 11.310377799993148,
+    "torch_median_s": 0.045282999984920025,
+    "speedup": 249.7709472375878,
+    "engine_times": [
+      10.45826510002371,
+      11.669053500023438,
+      11.28438530000858,
+      11.310377799993148,
+      11.752368799992837
+    ],
+    "torch_times": [
+      3.251921500021126,
+      0.043530200025998056,
+      0.057089799985988066,
+      0.04250559999491088,
+      0.045282999984920025
+    ],
+    "engine_final_loss": 0.25707984034586223,
+    "torch_final_loss": 0.25707984034586234,
+    "engine_acc": 0.875,
+    "torch_acc": 0.875,
+    "max_loss_diff": 3.3306690738754696e-16,
+    "epochs": 100,
+    "n": 200,
+    "graph_nodes": 19036
+  },
+  "task6": {
+    "compile": [
+      {
+        "model": "tiny MLP 2-8-1",
+        "input": "200x2",
+        "mode": "torch.jit.trace",
+        "eager (ms)": "0.028",
+        "compiled (ms)": "0.040",
+        "speed-up": "0.71x",
+        "compile/trace time (s)": "57.35"
+      },
+      {
+        "model": "MLP 512-1024-1024-10",
+        "input": "256x512",
+        "mode": "torch.jit.trace",
+        "eager (ms)": "4.020",
+        "compiled (ms)": "4.110",
+        "speed-up": "0.98x",
+        "compile/trace time (s)": "0.27"
+      },
+      {
+        "model": "many small ops (elementwise chain)",
+        "input": "256x1024",
+        "mode": "torch.jit.trace",
+        "eager (ms)": "3.378",
+        "compiled (ms)": "3.407",
+        "speed-up": "0.99x",
+        "compile/trace time (s)": "0.47"
+      }
+    ],
+    "tensors": [
+      {
+        "tensor": "A",
+        "shape": "(2048, 2048)",
+        "dtype": "float32",
+        "stride": "(2048, 1)",
+        "contiguous": "True",
+        "shares memory with A": "True"
+      },
+      {
+        "tensor": "A.t()",
+        "shape": "(2048, 2048)",
+        "dtype": "float32",
+        "stride": "(1, 2048)",
+        "contiguous": "False",
+        "shares memory with A": "True"
+      },
+      {
+        "tensor": "A[:, ::2]",
+        "shape": "(2048, 1024)",
+        "dtype": "float32",
+        "stride": "(2048, 2)",
+        "contiguous": "False",
+        "shares memory with A": "True"
+      },
+      {
+        "tensor": "A[::2, :]",
+        "shape": "(1024, 2048)",
+        "dtype": "float32",
+        "stride": "(4096, 1)",
+        "contiguous": "False",
+        "shares memory with A": "True"
+      },
+      {
+        "tensor": "A.t().contiguous()",
+        "shape": "(2048, 2048)",
+        "dtype": "float32",
+        "stride": "(2048, 1)",
+        "contiguous": "True",
+        "shares memory with A": "False"
+      }
+    ],
+    "noncontiguous": [
+      {
+        "operation (2048x2048 float32)": "elementwise y = x * 2 + 1",
+        "non-contiguous A.t() (ms)": "1.77",
+        "contiguous copy (ms)": "1.95",
+        "slow-down": "0.91x"
+      },
+      {
+        "operation (2048x2048 float32)": "row sum x.sum(dim=1)",
+        "non-contiguous A.t() (ms)": "0.70",
+        "contiguous copy (ms)": "0.21",
+        "slow-down": "3.37x"
+      },
+      {
+        "operation (2048x2048 float32)": "matmul x @ B",
+        "non-contiguous A.t() (ms)": "60.92",
+        "contiguous copy (ms)": "62.04",
+        "slow-down": "0.98x"
+      }
+    ],
+    "copy_ms": 7.078799986629747,
+    "notes": [
+      "- tiny MLP 2-8-1: torch.compile failed: InductorError: InvalidCxxCompiler: Compiler: cl is not found.",
+      "- MLP 512-1024-1024-10: torch.compile failed: InductorError: InvalidCxxCompiler: Compiler: cl is not found.",
+      "- many small ops (elementwise chain): torch.compile failed: InductorError: InvalidCxxCompiler: Compiler: cl is not found."
+    ]
+  },
+  "environment": {
+    "python": "3.13.3",
+    "torch": "2.14.1+cpu",
+    "numpy": "2.3.3",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "cpu": "Intel64 Family 6 Model 154 Stepping 3, GenuineIntel",
+    "threads": 8
+  }
+}
